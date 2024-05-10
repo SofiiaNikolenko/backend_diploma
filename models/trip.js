@@ -3,11 +3,11 @@ const Joi = require("joi");
 
 const { handleMongooseError } = require("../helpers");
 
-const contactSchema = new Schema(
+const tripSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, "Set name for contact"],
+      required: [true, "Set name for trip"],
     },
     email: {
       type: String,
@@ -27,7 +27,7 @@ const contactSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-contactSchema.post("save", handleMongooseError);
+tripSchema.post("save", handleMongooseError);
 
 const addSchema = Joi.object({
   name: Joi.string().min(2).max(50).required().messages({
@@ -64,6 +64,6 @@ const schemas = {
   updateFavoriteSchema,
 };
 
-const Contact = model("contact", contactSchema);
+const Trip = model("trip", tripSchema);
 
-module.exports = { Contact, schemas };
+module.exports = { Trip, schemas };

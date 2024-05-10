@@ -1,12 +1,12 @@
 const express = require("express");
 const { validateBody, isValidId, authenticake } = require("../../middlewares");
-const { schemas } = require("../../models/contact");
+const { schemas } = require("../../models/trip");
 const {
   ctrlGetAll,
   ctrlGetById,
-  ctrlAddContact,
-  ctrlDeleteContact,
-  ctrlUpdateContact,
+  ctrlAddTrip,
+  ctrlDeleteTrip,
+  ctrlUpdateTrip,
   ctrlUpdateFavorite,
 } = require("../../controllers");
 
@@ -14,22 +14,22 @@ const router = express.Router();
 
 router.get("/", authenticake, ctrlGetAll);
 
-router.get("/:contactId", authenticake, isValidId, ctrlGetById);
+router.get("/:tripId", authenticake, isValidId, ctrlGetById);
 
-router.post("/", authenticake, validateBody(schemas.addSchema), ctrlAddContact);
+router.post("/", authenticake, validateBody(schemas.addSchema), ctrlAddTrip);
 
-router.delete("/:contactId", authenticake, isValidId, ctrlDeleteContact);
+router.delete("/:tripId", authenticake, isValidId, ctrlDeleteTrip);
 
 router.put(
-  "/:contactId",
+  "/:tripId",
   authenticake,
   isValidId,
   validateBody(schemas.addSchema),
-  ctrlUpdateContact
+  ctrlUpdateTrip
 );
 
 router.patch(
-  "/:contactId/favorite",
+  "/:tripId/favorite",
   authenticake,
   isValidId,
   validateBody(schemas.updateFavoriteSchema),

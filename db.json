@@ -1,0 +1,70 @@
+[
+  {
+    "userId": "user_id_1",
+    "title": "Відвідати Париж і Рим",
+    "description": "Тур по найвідоміших містах Європи - Парижу та Риму",
+    "categories": [
+      {
+        "name": "Визначні місця",
+        "publicTodo": true,
+        "todoList": {
+          "todo1": "Ейфелева вежа",
+          "todo2": "Колізей"
+        }
+      },
+      {
+        "name": "Ресторани",
+        "publicTodo": true,
+        "todoList": {
+          "todo1": "Закусочна у Парижі",
+          "todo2": "Піца у Римі"
+        }
+      }
+    ],
+    "public": true,
+    "reactions": [
+      {
+        "userId": "user_id_1",
+        "reaction": "like"
+      },
+      {
+        "userId": "user_id_2",
+        "reaction": "love"
+      }
+    ],
+    "createdAt": "2024-05-01",
+    "updatedAt": "2024-05-05"
+  },
+  {
+    "userId": "user_id_2",
+    "title": "Вище за хмари",
+    "description": "Трекінг в Гімалаї для любителів пригод та гірських пейзажів",
+    "categories": [
+      {
+        "name": "Визначні місця",
+        "publicTodo": true,
+        "todoList": {
+          "todo1": "Ейфелева вежа",
+          "todo2": "Колізей"
+        }
+      },
+      {
+        "name": "Ресторани",
+        "publicTodo": true,
+        "todoList": {
+          "todo1": "Закусочна у Парижі",
+          "todo2": "Піца у Римі"
+        }
+      }
+    ],
+    "public": true,
+    "reactions": [
+      {
+        "userId": "user_id_1",
+        "reaction": "like"
+      }
+    ],
+    "createdAt": "2024-04-15",
+    "updatedAt": "2024-04-20"
+  }
+]

@@ -1,11 +1,11 @@
 const { ctrlWrapper } = require("../helpers");
 
-const ctrlGetAll = require("./contacts/getAll");
-const ctrlGetById = require("./contacts/getById");
-const ctrlAddContact = require("./contacts/addContact");
-const ctrlDeleteContact = require("./contacts/deleteContact");
-const ctrlUpdateContact = require("./contacts/updateContact");
-const ctrlUpdateFavorite = require("./contacts/updateFavorite");
+const ctrlGetAll = require("./trips/getAll");
+const ctrlGetById = require("./trips/getById");
+const ctrlAddTrip = require("./trips/addTrip");
+const ctrlDeleteTrip = require("./trips/deleteTrip");
+const ctrlUpdateTrip = require("./trips/updateTrip");
+const ctrlUpdateFavorite = require("./trips/updateFavorite");
 
 const ctrlRegister = require("./auth/register");
 const ctrlLogin = require("./auth/login");
@@ -18,9 +18,9 @@ const ctrlResendVerifyEmail = require("./auth/resendVerifyEmail");
 module.exports = {
   ctrlGetAll: ctrlWrapper(ctrlGetAll),
   ctrlGetById: ctrlWrapper(ctrlGetById),
-  ctrlAddContact: ctrlWrapper(ctrlAddContact),
-  ctrlDeleteContact: ctrlWrapper(ctrlDeleteContact),
-  ctrlUpdateContact: ctrlWrapper(ctrlUpdateContact),
+  ctrlAddTrip: ctrlWrapper(ctrlAddTrip),
+  ctrlDeleteTrip: ctrlWrapper(ctrlDeleteTrip),
+  ctrlUpdateTrip: ctrlWrapper(ctrlUpdateTrip),
   ctrlUpdateFavorite: ctrlWrapper(ctrlUpdateFavorite),
 
   ctrlRegister: ctrlWrapper(ctrlRegister),
