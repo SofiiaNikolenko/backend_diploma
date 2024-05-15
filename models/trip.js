@@ -18,7 +18,7 @@ const tripSchema = new Schema(
     },
     categories: [
       {
-        name: {
+        nameCategory: {
           type: String,
           required: true,
         },
@@ -28,12 +28,12 @@ const tripSchema = new Schema(
               type: String,
               required: true,
             },
-            publicTodo: {
-              type: Boolean,
-              default: false,
-            },
           },
         ],
+        publicList: {
+          type: Boolean,
+          default: false,
+        },
       },
     ],
     public: {
@@ -59,7 +59,6 @@ const tripSchema = new Schema(
 tripSchema.post("save", handleMongooseError);
 
 const addSchema = Joi.object({
-  owner: Joi.string().required(),
   title: Joi.string().required().messages({
     "string.base": "title must be a string",
     "string.empty": "title cannot be empty",
@@ -68,13 +67,13 @@ const addSchema = Joi.object({
   description: Joi.string(),
   categories: Joi.array().items(
     Joi.object({
-      name: Joi.string().required(),
+      nameCategory: Joi.string().required(),
       todoList: Joi.array().items(
         Joi.object({
           todo: Joi.string().required(),
-          publicTodo: Joi.boolean(),
         })
       ),
+      publicList: Joi.boolean(),
     })
   ),
   public: Joi.boolean(),
@@ -85,7 +84,6 @@ const addSchema = Joi.object({
   //   })
   // ),
 });
-
 
 const updateFavoriteSchema = Joi.object({
   favorite: Joi.boolean().required(),

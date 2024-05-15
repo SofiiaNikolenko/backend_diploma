@@ -6,6 +6,7 @@ const ctrlAddTrip = require("./trips/addTrip");
 const ctrlDeleteTrip = require("./trips/deleteTrip");
 const ctrlUpdateTrip = require("./trips/updateTrip");
 const ctrlUpdateFavorite = require("./trips/updateFavorite");
+const ctrlGetAllPublic = require("./trips/getAllPublic");
 
 const ctrlRegister = require("./auth/register");
 const ctrlLogin = require("./auth/login");
@@ -22,6 +23,7 @@ module.exports = {
   ctrlDeleteTrip: ctrlWrapper(ctrlDeleteTrip),
   ctrlUpdateTrip: ctrlWrapper(ctrlUpdateTrip),
   ctrlUpdateFavorite: ctrlWrapper(ctrlUpdateFavorite),
+  ctrlGetAllPublic: ctrlWrapper(ctrlGetAllPublic),
 
   ctrlRegister: ctrlWrapper(ctrlRegister),
   ctrlLogin: ctrlWrapper(ctrlLogin),

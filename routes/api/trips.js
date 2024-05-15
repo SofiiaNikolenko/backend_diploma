@@ -8,9 +8,13 @@ const {
   ctrlDeleteTrip,
   ctrlUpdateTrip,
   ctrlUpdateFavorite,
+  // ctrlGetAllPublic,
 } = require("../../controllers");
+const getAllPublic = require("../../controllers/trips/getAllPublic");
 
 const router = express.Router();
+
+router.get("/allpublic", getAllPublic);
 
 router.get("/", authenticake, ctrlGetAll);
 
@@ -35,5 +39,6 @@ router.patch(
   validateBody(schemas.updateFavoriteSchema),
   ctrlUpdateFavorite
 );
+
 
 module.exports = router;

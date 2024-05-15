@@ -14,11 +14,6 @@ const userSchema = new Schema(
       required: [true, "Email is required"],
       unique: true,
     },
-    // subscription: {
-    //   type: String,
-    //   enum: ["starter", "pro", "business"],
-    //   default: "starter",
-    // },
     token: String,
     avatarURL: String,
     verify: {
@@ -45,9 +40,6 @@ const registerSchema = Joi.object({
     "string.email": "Email must be a valid email address",
     "string.empty": "Email is required",
   }),
-  // subscription: Joi.string()
-  //   .valid("starter", "pro", "business")
-  //   .default("starter"),
   token: Joi.string(),
 });
 
