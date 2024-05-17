@@ -42,8 +42,14 @@ const tripSchema = new Schema(
     },
     photos: [
       {
-        type: String,
-        required: false,
+        cdnUrl: {
+          type: String,
+          required: true,
+        },
+        uuid: {
+          type: String,
+          required: true,
+        },
       },
     ],
   },
@@ -71,7 +77,14 @@ const addSchema = Joi.object({
     })
   ),
   isPublic: Joi.boolean(),
-  photos: Joi.array().items(Joi.string()),
+  photos: Joi.array().items(
+    Joi.object({
+      cdnUrl: Joi.string().uri().required(),
+      uuid: Joi.string()
+        .guid({ version: ["uuidv4"] })
+        .required(),
+    })
+  ),
 });
 
 const updateFavoriteSchema = Joi.object({
