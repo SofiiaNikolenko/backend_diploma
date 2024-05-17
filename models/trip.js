@@ -36,22 +36,16 @@ const tripSchema = new Schema(
         },
       },
     ],
-    public: {
+    isPublic: {
       type: Boolean,
       default: false,
     },
-    // reactions: [
-    //   {
-    //     userId: {
-    //       type: Schema.Types.ObjectId,
-    //       required: true,
-    //     },
-    //     reaction: {
-    //       type: String,
-    //       required: true,
-    //     },
-    //   },
-    // ],
+    photos: [
+      {
+        type: String,
+        required: false,
+      },
+    ],
   },
   { versionKey: false, timestamps: true }
 );
@@ -76,13 +70,8 @@ const addSchema = Joi.object({
       publicList: Joi.boolean(),
     })
   ),
-  public: Joi.boolean(),
-  // reactions: Joi.array().items(
-  //   Joi.object({
-  //     userId: Joi.string().required(),
-  //     reaction: Joi.string().required(),
-  //   })
-  // ),
+  isPublic: Joi.boolean(),
+  photos: Joi.array().items(Joi.string()),
 });
 
 const updateFavoriteSchema = Joi.object({

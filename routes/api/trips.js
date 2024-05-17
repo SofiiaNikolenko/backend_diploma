@@ -8,7 +8,6 @@ const {
   ctrlDeleteTrip,
   ctrlUpdateTrip,
   ctrlUpdateFavorite,
-  // ctrlGetAllPublic,
 } = require("../../controllers");
 const getAllPublic = require("../../controllers/trips/getAllPublic");
 
@@ -39,6 +38,5 @@ router.patch(
   validateBody(schemas.updateFavoriteSchema),
   ctrlUpdateFavorite
 );
-
 
 module.exports = router;

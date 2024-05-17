@@ -6,7 +6,7 @@ const getAllPublic = async (req, res, next) => {
 
   try {
     const countPromise = Trip.countDocuments({ public: true });
-    const tripsPromise = Trip.find({ public: true }, "-createdAt -updatedAt")
+    const tripsPromise = Trip.find({ isPublic: true }, "-createdAt -updatedAt")
       .skip(skip)
       .limit(limit);
 
