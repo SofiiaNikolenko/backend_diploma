@@ -11,12 +11,15 @@ const {
 } = require("../../controllers");
 const getAllPublic = require("../../controllers/trips/getAllPublic");
 const updateOnePublic = require("../../controllers/trips/updateOnePublic");
+const getTripsWithLikes = require("../../controllers/trips/getTripsWithLikes");
 
 const router = express.Router();
 
 router.get("/allpublic", getAllPublic);
 
 router.patch("/:tripId/likes", isValidId, updateOnePublic);
+
+router.get("/trips-with-likes", getTripsWithLikes);
 
 router.get("/", authenticake, ctrlGetAll);
 
