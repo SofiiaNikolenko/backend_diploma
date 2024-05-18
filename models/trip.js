@@ -52,6 +52,10 @@ const tripSchema = new Schema(
         },
       },
     ],
+    likes: {
+      type: Number,
+      default: 0,
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -85,6 +89,7 @@ const addSchema = Joi.object({
         .required(),
     })
   ),
+  likes: Joi.number().integer().min(0).default(0),
 });
 
 const updateFavoriteSchema = Joi.object({

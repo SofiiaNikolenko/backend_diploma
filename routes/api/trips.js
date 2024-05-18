@@ -10,10 +10,13 @@ const {
   ctrlUpdateFavorite,
 } = require("../../controllers");
 const getAllPublic = require("../../controllers/trips/getAllPublic");
+const updateOnePublic = require("../../controllers/trips/updateOnePublic");
 
 const router = express.Router();
 
 router.get("/allpublic", getAllPublic);
+
+router.patch("/:tripId/likes", isValidId, updateOnePublic);
 
 router.get("/", authenticake, ctrlGetAll);
 
