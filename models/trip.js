@@ -89,18 +89,14 @@ const addSchema = Joi.object({
         .required(),
     })
   ),
-  likes: Joi.number().integer().min(0).default(0),
-});
-
-const updateFavoriteSchema = Joi.object({
-  favorite: Joi.boolean().required(),
 });
 
 const schemas = {
   addSchema,
-  updateFavoriteSchema,
 };
 
 const Trip = model("trip", tripSchema);
 
 module.exports = { Trip, schemas };
+
+  // likes: Joi.number().integer().min(0).default(0),

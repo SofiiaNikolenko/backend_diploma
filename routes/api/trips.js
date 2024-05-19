@@ -7,7 +7,6 @@ const {
   ctrlAddTrip,
   ctrlDeleteTrip,
   ctrlUpdateTrip,
-  ctrlUpdateFavorite,
 } = require("../../controllers");
 const getAllPublic = require("../../controllers/trips/getAllPublic");
 const updateOnePublic = require("../../controllers/trips/updateOnePublic");
@@ -29,20 +28,12 @@ router.post("/", authenticake, validateBody(schemas.addSchema), ctrlAddTrip);
 
 router.delete("/:tripId", authenticake, isValidId, ctrlDeleteTrip);
 
-router.put(
+router.patch(
   "/:tripId",
   authenticake,
   isValidId,
   validateBody(schemas.addSchema),
   ctrlUpdateTrip
-);
-
-router.patch(
-  "/:tripId/favorite",
-  authenticake,
-  isValidId,
-  validateBody(schemas.updateFavoriteSchema),
-  ctrlUpdateFavorite
 );
 
 module.exports = router;
