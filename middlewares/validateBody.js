@@ -7,7 +7,7 @@ const validateBody = (schema) => {
     }
 
     if (req.method === "PATCH" && Object.keys(req.body).length === 0) {
-      return next(HttpError(400, "missing field favorite"));
+      return next(HttpError(400, "missing field"));
     }
 
     const { error } = schema.validate(req.body);
