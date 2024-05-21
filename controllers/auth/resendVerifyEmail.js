@@ -20,7 +20,7 @@ const resendVerifyEmail = async (req, res, next) => {
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <p>Hello!</p>
       <p>We noticed that you haven't verified your email yet. Please click the button below to resend the verification email:</p>
-      <a style="background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
+      <a style="background-color: #8dd3bb; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
          href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">Resend Verification Email</a>
       <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
       <p><a href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">${BASE_URL}/users/resend-verification/${user.verificationToken}</a></p>
