@@ -15,7 +15,6 @@ const userSchema = new Schema(
       unique: true,
     },
     token: String,
-    avatarURL: String,
     verify: {
       type: Boolean,
       default: false,

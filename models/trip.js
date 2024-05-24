@@ -98,5 +98,3 @@ const schemas = {
 const Trip = model("trip", tripSchema);
 
 module.exports = { Trip, schemas };
-
-  // likes: Joi.number().integer().min(0).default(0),
