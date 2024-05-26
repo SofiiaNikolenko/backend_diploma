@@ -21,10 +21,6 @@ const verifyEmail = async (req, res, next) => {
   const htmlContent = fs.readFileSync(htmlFilePath, "utf8");
 
   res.status(200).send(htmlContent);
-
-  // res.status(200).json({
-  //   message: "Verification successful",
-  // });
 };
 
 module.exports = verifyEmail;
