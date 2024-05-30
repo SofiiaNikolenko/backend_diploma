@@ -17,15 +17,15 @@ const resendVerifyEmail = async (req, res, next) => {
     to: email,
     subject: "Resend Verification Email",
     html: `
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-      <p>Hello!</p>
-      <p>We noticed that you haven't verified your email yet. Please click the button below to resend the verification email:</p>
-      <a style="background-color: #8dd3bb; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
-         href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">Resend Verification Email</a>
-      <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
-      <p><a href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">${BASE_URL}/users/resend-verification/${user.verificationToken}</a></p>
-    </div>
-  `,
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <p>Привіт!</p>
+        <p>Ми помітили, що ви ще не верифікували свою електронну пошту. Будь ласка, натисніть кнопку нижче, щоб повторно надіслати лист для верифікації:</p>
+        <a style="background-color: #8dd3bb; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
+          href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">Повторно надіслати лист для верифікації</a>
+        <p>Якщо кнопка вище не працює, ви також можете скопіювати та вставити наступне посилання у свій браузер:</p>
+        <p><a href="${BASE_URL}/users/resend-verification/${user.verificationToken}" target="_blank">${BASE_URL}/users/resend-verification/${user.verificationToken}</a></p>
+      </div>
+    `,
   };
 
   await sendEmail(verifyEmail);

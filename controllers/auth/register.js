@@ -22,15 +22,15 @@ const register = async (req, res, next) => {
     to: email,
     subject: "Verify email",
     html: `
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-      <p>Hello!</p>
-      <p>Please click the button below to verify your email:</p>
-      <a style="background-color: #8dd3bb; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
-         href="${BASE_URL}/users/verify/${verificationToken}" target="_blank">Verify Email</a>
-      <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
-      <p><a href="${BASE_URL}/users/verify/${verificationToken}" target="_blank">${BASE_URL}/users/verify/${verificationToken}</a></p>
-    </div>
-  `,
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <p>Привіт!</p>
+        <p>Будь ласка, натисніть кнопку нижче, щоб верифікувати свою електронну пошту:</p>
+        <a style="background-color: #8dd3bb; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block;" 
+          href="${BASE_URL}/users/verify/${verificationToken}" target="_blank">Верифікувати електронну пошту</a>
+        <p>Якщо кнопка вище не працює, ви також можете скопіювати та вставити наступне посилання у свій браузер:</p>
+        <p><a href="${BASE_URL}/users/verify/${verificationToken}" target="_blank">${BASE_URL}/users/verify/${verificationToken}</a></p>
+      </div>
+    `,
   };
 
   await sendEmail(verifyEmail);
